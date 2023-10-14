@@ -8,10 +8,10 @@ docker build -t item-app:v1 .
 docker images
 
 # 3. Mengubah nama image menjadi format Docker Hub
-docker tag item-app:v1 melvinjovano/microservice-dicoding:v1
+docker tag item-app:v1 melvinjovano/item-app:v1
 
 # 4. Login ke Docker Hub
 echo $PASSWORD_DOCKER_HUB | docker login -u melvinjovano --password-stdin
 
 # 5. Mengunggah image ke Docker Hub
-docker push melvinjovano/microservice-dicoding:v1
+docker push melvinjovano/item-app:v1

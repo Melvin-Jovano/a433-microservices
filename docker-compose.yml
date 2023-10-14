@@ -21,7 +21,7 @@ services:
     restart: always
 
     # pakai img yg barusan dibuat
-    image: melvinjovano/microservice-dicoding:v1
+    image: melvinjovano/item-app:v1
 
     # Expose port ke 80 / localhost
     ports:

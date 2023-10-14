@@ -1,1 +1,1 @@
-https://hub.docker.com/repository/docker/melvinjovano/microservice-dicoding/general
+https://hub.docker.com/repository/docker/melvinjovano/item-app/general
