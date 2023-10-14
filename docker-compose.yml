@@ -1,0 +1,55 @@
+# Versi Docker compose = 3
+version: '3'
+
+networks:
+  microservices:
+    external: true
+    name: microservices
+
+# defenisikan semua service yg akan dipakai
+services:
+
+  # express / main app
+  item-app:
+
+    # set network to communicate to each other
+    networks:
+      - microservices
+
+    # restart policy = always
+    restart: always
+
+    # pakai img yg barusan dibuat
+    image: melvinjovano/microservice-dicoding:v1
+
+    # Expose port ke 80 / localhost
+    ports:
+      - "80:8080"
+
+    # build container ini ketika item-db sdh up
+    depends_on:
+      - item-db
+
+  # build container bernama item-db
+  item-db:
+
+    container_name: item-db
+
+    # set network to communicate to each other
+    networks:
+      - microservices
+
+    # restart policy = always
+    restart: always
+
+    # pakai img mongodb
+    image: mongo:3
+
+    # pakai volume bernama app-db
+    volumes:
+      - app-db:/data/db
+
+# buat volume bernama app-db
+volumes:
+  app-db:
+    name: app-db
