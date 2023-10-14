@@ -1,6 +1,7 @@
 # Versi Docker compose = 3
 version: '3'
 
+# defenisikan network
 networks:
   microservices:
     external: true
